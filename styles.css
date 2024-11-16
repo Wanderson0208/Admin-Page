@@ -1,0 +1,364 @@
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+
+    font-family: Arial, sans-serif;
+
+}
+
+.divTitleProject {
+
+    width: 100%;
+    height: 10vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    background-color: #ffffff;
+    z-index: 1000;
+
+}
+
+.headerMenu {
+
+    width: 20%;
+    height: 100vh;
+
+    position: fixed;
+
+    top: 10vh;
+    left: 0;
+
+    background-color: #272c32;
+
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+}
+
+.headerMenu a {
+
+    text-decoration: none;
+    color: white;
+
+    padding: 20px 20px;
+
+    transition: all 0.3s ease-in-out;
+
+    cursor: pointer;
+
+    border-radius: 20px 0px 0px 20px;
+
+}
+
+.headerMenu a:hover {
+
+    background-color: white;
+    color: black;
+
+}
+
+.headerMenu p {
+
+    color: white;
+    font-size: 15px;
+    text-align: center;
+
+    line-height: 20px;
+    margin-top: 15px;
+
+}
+
+.headerMenu p .linkGitHub {
+
+    color: darkblue;
+    font-size: 15px;
+    text-decoration: underline;
+
+    cursor: pointer;
+    padding: 0px 0px;
+
+}
+
+.headerMenu p .linkGitHub:hover {
+
+    color: white;
+    font-size: 15px;
+    text-decoration: underline;
+    background-color: transparent;
+
+}
+
+.pesquisaEmail {
+
+    width: calc(80% - 20px);
+
+    position: fixed;
+
+    top: 10vh; 
+    left: 20%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px;
+    background-color: #f1f1f1;
+    z-index: 1000;
+
+}
+
+.pesquisaEmail section {
+
+    width: 60%;
+
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.pesquisaEmail section input {
+
+    width: 78%;
+
+    padding: 0px 15px;
+
+}
+
+.pesquisaEmail section button {
+
+    width: 20%;
+
+}
+
+.content {
+
+    height: calc(100vh - 20vh);
+
+    margin-top: 20vh;
+    margin-left: 20%;
+
+    padding: 20px;
+
+    overflow-y: auto;
+
+}
+
+.container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+th, td {
+
+    padding: 8px;
+
+}
+
+th {
+
+    text-align: left;
+    background-color: #f2f2f2;
+
+}
+
+td {
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.397);
+
+}
+
+tbody td {
+
+    font-size: 12px;
+
+}
+
+.actions {
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    .editar, .excluir {
+
+        border: none;
+        transition: all 0.3s ease-in-out;
+
+    }
+
+    .editar:hover {
+
+        cursor: pointer;
+        background-color: blue;
+
+    }
+
+    .excluir:hover {
+
+        cursor: pointer;
+        background-color: red;
+
+    }
+
+}
+
+button {
+
+    padding: 10px;
+
+    background-color: #4CAF50;
+    color: white;
+
+    border: none;
+    cursor: pointer;
+
+}
+
+button:hover {
+
+    background-color: #45a049;
+
+}
+
+/* Janelas modais */
+
+
+.modal {
+
+    width: 100%;
+    height: 100vh;
+
+    display: none;
+
+    position: absolute;
+    z-index: 99999;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+
+}
+
+.modal-content, .modal-content-delete {
+
+    position: relative;
+    background-color: #fefefe;
+    /* margin: 5% auto;
+    padding: 20px; */
+    border: 1px solid #888;
+    width: 40%;
+    height: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    form {
+
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px 15px;
+        border: 1px solid black;
+
+        input {
+
+            padding: 10px 10px;
+            border: none;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.459);
+            border-left: 1px solid rgba(0, 0, 0, 0.459);
+
+        }
+
+        input:focus {
+
+            outline: none;
+
+        }
+        
+    }
+
+}
+
+.modal-content-delete {
+
+    width: 30%;
+    height: 20%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    p {
+
+        width: 85%;
+        /* border: 1px solid black; */
+
+    }
+    
+}
+
+.modal-content-delete .divBtnsSimNaoDelete {
+
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    /* border: 1px solid black; */
+
+    button {
+
+        width: 50%;
+        border: none;
+        transition: all 0.3s ease-in-out;
+
+    }
+
+    .closeBtn:hover {
+
+        cursor: pointer;
+        background-color: red;
+        color: white;
+
+    }
+
+    #confirmDeleteBtn:hover { 
+
+        cursor: pointer;
+        background-color: green;
+        color: white;
+
+    }
+
+}

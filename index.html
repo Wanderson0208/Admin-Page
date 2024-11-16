@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD de Usuários</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    
+    <div class="divTitleProject">
+
+        <h1>Adm Page</h1>
+
+    </div>
+    
+    <header class="headerMenu">
+
+        <a href="index.html">Usuários</a>
+        <a href="#">Funcionários</a>
+        <a href="#">Empresas</a>
+        <a href="#">Serviços</a>
+
+        <p>&copy; 2024, Dev. <a class="linkGitHub" target="_blank" href="https://github.com/Wanderson0208">Wanderson Luis</a><br>Todos os direitos reservados</p>
+
+    </header>
+
+    <div class="pesquisaEmail">
+
+
+        <button id="addUserBtn">Adicionar Usuário</button>
+
+        <section>
+            
+            <input type="text" id="searchEmail" placeholder="Pesquisar por email">
+            <button id="searchBtn">Pesquisar</button>
+
+        </section>
+
+    </div>
+
+    <div class="content">
+
+        <div class="container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>Cidade</th>
+                        <th>Ação</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="userTableBody">
+
+                    <!-- Usuários vão ser adicionados aqui -->
+                    <!-- <td>Rogério</td>
+                    <td>Rogério@gmail.com</td>
+                    <td>21945632100</td>
+                    <td>Santa Catarina</td>
+
+                    <td class="actions">
+
+                        <button>Editar</button>
+                        <button>Excluir</button>
+
+                    </td> -->
+
+                </tbody>
+
+            </table>
+
+            <!-- Modal para Cadastro -->
+            <div id="userModalCad" class="modal">
+
+                <div class="modal-content">
+
+                    <!-- <span class="closeBtn">&times;</span> -->
+
+                    <form id="userFormCad">
+
+                        <h2>Cadastro de Usuário</h2>
+
+                        <input type="text" id="name" name="name" placeholder="Digite o nome" required>
+
+                        <input type="email" id="email" name="email" placeholder="Digite o email" required>
+
+                        <input type="tel" id="phone" name="phone" placeholder="Digite o telefone" required>
+
+                        <input type="text" id="city" name="city" placeholder="Digite a cidade" required>
+
+                        <button type="submit">Salvar</button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <!-- Modal para Edição -->
+            <div id="userModalEdit" class="modal">
+
+                <div class="modal-content">
+
+                    <!-- <span class="closeBtn">&times;</span> -->
+
+                    <form id="userFormEdit">
+
+                        <h2>Edição de Usuário</h2>
+
+                        <input type="text" id="name" name="name" required>
+
+                        <input type="email" id="email" name="email" placeholder="Digite o email" required>
+
+                        <input type="tel" id="phone" name="phone" placeholder="Digite o telefone" required>
+
+                        <input type="text" id="city" name="city" placeholder="Digite a cidade" required>
+
+                        <button type="submit">Salvar</button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <!-- Modal de Confirmação -->
+            <div id="confirmModal" class="modal">
+
+                <div class="modal-content-delete">
+
+                    <p>Tem <strong>certeza</strong> que deseja <strong>excluir</strong> este <strong>usuário</strong>?</p>
+
+                    <div class="divBtnsSimNaoDelete">
+
+                        <button id="confirmDeleteBtn">Sim</button>
+
+                        <button class="closeBtn">Não</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>
